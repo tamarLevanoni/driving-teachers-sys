@@ -1,0 +1,20 @@
+.student-panel {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-num-lessons {
+  text-align: center;
+  font-size: 18px;
+}
+
+.student-num-lessons span {
+  display: block;
+  font-size: 10px;
+}
+
+.student-img img {
+  width: 30px;
+}

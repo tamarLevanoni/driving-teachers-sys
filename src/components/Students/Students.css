@@ -1,0 +1,26 @@
+/* .collapse-container {
+  margin: 0px 5px;
+} */
+#footerStudents {
+  position: sticky;
+  bottom: 0;
+  background-color: #455a64;
+  height: 35px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.title-students {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  /* z-index: 0; */
+  /* background-color: #20fffb; */
+  background-color: #455a64;
+  height: 35px;
+  text-align: center;
+  /* font-size: 20px; */
+  /* font-weight: bold; */
+  color: white;
+}
