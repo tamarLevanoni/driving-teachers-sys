@@ -1,223 +1,50 @@
-import Student from "../Student/Student";
+import { useStudentsState } from "../../hooks/common";
+// import Student from "../Student/Student";
 import "./Students.css";
-
-// const studentList = [
-//   {
-//     firstName: "שרה",
-//     lastName: "לוי",
-//     id: 305493284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "חיה",
-//     lastName: "כהן",
-//     id: 305233284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "נועה",
-//     lastName: "דגן",
-//     id: 305494284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "שרה",
-//     lastName: "לוי",
-//     id: 305493286,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "חיה",
-//     lastName: "כהן",
-//     id: 305633284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "נועה",
-//     lastName: "דגן",
-//     id: 305496284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "שרה",
-//     lastName: "לוי",
-//     id: 315493284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "חיה",
-//     lastName: "כהן",
-//     id: 305234284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "נועה",
-//     lastName: "דגן",
-//     id: 305394284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "שרה",
-//     lastName: "לוי",
-//     id: 305293284,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "חיה",
-//     lastName: "כהן",
-//     id: 305233214,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-//   {
-//     firstName: "נועה",
-//     lastName: "דגן",
-//     id: 305494184,
-//     dateOfBirth: new Date("03/25/2000"),
-//     phoneNumber: 5026637201,
-//     emailAddress: "fake@gmail.com",
-//     Theory: false,
-//     numberOfLessons: 3,
-//     testDate: new Date(),
-//     pricePerLesson: 140,
-//     internalTest: false,
-//     registrationFees: true,
-//     enteredSchool: true,
-//     //   debt: false,
-//     payment: 280,
-//   },
-// ];
+import { Collapse } from "antd";
+import img from "../../logo-woman.png";
 
 const Students = () => {
+  const [studentsList, setStudentsList] = useStudentsState();
+
+  const { Panel } = Collapse;
+
+  const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
+
   return (
     <div className="students">
       <h2 className="title-students">רשימת תלמידים</h2>
       <div className="collapse-container">
-        {studentList.map((student) => (
-          <Student key={student.id} student={student} />
-        ))}
+        <Collapse expandIconPosition="right" accordion="true">
+          {studentsList.map(({ firstName, lastName, numberOfLessons, payment, id }) => (
+            // <Student key={student.id} student={student} />
+            <Panel
+              header={
+                <div className="student-panel">
+                  <div className="student-img">
+                    <img src={img} alt="profile img"></img>
+                  </div>
+                  <div className="student-name">{`${firstName} ${lastName}`}</div>
+                  <div className="student-num-lessons">
+                    {numberOfLessons}
+                    <span>שיעורים</span>
+                  </div>
+                  <div className="student-payment">{payment}₪</div>
+                </div>
+              }
+              key={id}
+            >
+              <p>{text}</p>
+            </Panel>
+          ))}
+        </Collapse>
       </div>
-      <footer id="footerStudents">{`סה"כ: ${studentList.length} תלמידים`}</footer>
+
+      <footer id="footerStudents">{`סה"כ: ${studentsList.length} תלמידים`}</footer>
     </div>
   );
 };

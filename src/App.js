@@ -3,22 +3,25 @@ import HomePage from "./components/HomePage/HomePage";
 import Students from "./components/Students/Students";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
+import StudentsContext from "./contexts/StudentsContext";
 
 const App = () => {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch("http://localhost:8000/products"); //"https://fakestoreapi.com/products");
-      const json = await res.json();
-      setStudents(json);
+      const res = await fetch("http://localhost:8000/students"); //"https://fakestoreapi.com/products");
+      const studentsJson = await res.json();
+      setStudents(studentsJson);
     }
 
     fetchData();
   }, []);
+
   return (
-    <Router>
-      {/* <nav className="navigation">
+    <StudentsContext.Provider value={[students, setStudents]}>
+      <Router>
+        {/* <nav className="navigation">
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -29,15 +32,15 @@ const App = () => {
       </ul>
     </nav> */}
 
-      <Switch>
-        <Route path="/students" component={Students} />
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
-    </Router>
+        <Switch>
+          <Route path="/students" component={Students} />
+          <Route path="/">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
+    </StudentsContext.Provider>
   );
-
 };
 
 export default App;

@@ -16,32 +16,32 @@ const Student = ({ student }) => {
 `;
 
   return (
-    <Collapse accordion expandIconPosition="right">
-      <Panel
-        header={
-          <div className="student-panel">
-            <div className="student-img">
-              <img src={img} alt="profile img"></img>
-            </div>
-            <div className="student-name">{`${firstName} ${lastName}`}</div>
-            <div className="student-num-lessons">
-              {numberOfLessons}
-              <span>שיעורים</span>
-            </div>
-            <div className="student-payment">{payment}₪</div>
+    // <Collapse expandIconPosition="right" accordion="true">
+    <Panel
+      header={
+        <div className="student-panel">
+          <div className="student-img">
+            <img src={img} alt="profile img"></img>
           </div>
-        }
-        key="1"
-      >
-        <p>{text}</p>
-      </Panel>
-      {/* <Panel header="This is panel header 2" key="2">
+          <div className="student-name">{`${firstName} ${lastName}`}</div>
+          <div className="student-num-lessons">
+            {numberOfLessons}
+            <span>שיעורים</span>
+          </div>
+          <div className="student-payment">{payment}₪</div>
+        </div>
+      }
+      key="1"
+    >
+      <p>{text}</p>
+    </Panel>
+    /* <Panel header="This is panel header 2" key="2">
         <p>{text}</p>
         </Panel>
         <Panel header="This is panel header 3" key="3">
         <p>{text}</p>
-    </Panel> */}
-    </Collapse>
+    </Panel> */
+    // </Collapse>
   );
 };
 

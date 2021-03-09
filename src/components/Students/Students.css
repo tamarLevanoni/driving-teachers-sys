@@ -15,7 +15,7 @@
   text-align: center;
   position: sticky;
   top: 0;
-  /* z-index: 0; */
+  z-index: 1;
   /* background-color: #20fffb; */
   background-color: #455a64;
   height: 35px;
@@ -23,4 +23,25 @@
   /* font-size: 20px; */
   /* font-weight: bold; */
   color: white;
+}
+
+.student-panel {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-num-lessons {
+  text-align: center;
+  font-size: 18px;
+}
+
+.student-num-lessons span {
+  display: block;
+  font-size: 10px;
+}
+
+.student-img img {
+  width: 30px;
 }
