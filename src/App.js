@@ -3,7 +3,7 @@ import HomePage from "./components/HomePage/HomePage";
 import Students from "./components/Students/Students";
 
 const App = () => {
-  return <HomePage />;
+  return <Students />;
 };
 
 export default App;
