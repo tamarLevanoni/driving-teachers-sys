@@ -1,40 +1,36 @@
 .homePage {
-    background: url(./background.svg);
-    background-repeat: no-repeat;
-    height: calc(100vh);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
+  background: url(./background.png);
+  background-repeat: no-repeat;
+  height: calc(100vh);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .setting {
-    background: url(./settings.svg);
-    height: calc(10vh);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 10%;
-    border: #00000000;
-    margin: 10px 0px 0px 10px ;
-    align-self: end;
-
-
+  background: url(./settings.svg);
+  height: calc(10vh);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 10%;
+  border: #00000000;
+  margin: 10px 0px 0px 10px;
+  align-self: end;
 }
 container.buttons {
-    display: inline-flex;
-    justify-content: space-between;
-    width: 80%;
+  display: inline-flex;
+  justify-content: space-between;
+  width: 80%;
 }
 
-button.main{
-    height: calc(10vh);
-    background: #f7f551d6;
-    border-radius: 20px;
-    width: 25%;    
+button.main {
+  height: calc(10vh);
+  background: #f7f551d6;
+  border-radius: 20px;
+  width: 25%;
 }
 footer {
 }
-
